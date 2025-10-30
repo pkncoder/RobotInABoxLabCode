@@ -1,6 +1,7 @@
 package frc.robot;
 
 import edu.wpi.first.wpilibj.TimedRobot;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.CommandScheduler;
 
@@ -16,6 +17,12 @@ public class Robot extends TimedRobot {
   @Override
   public void robotPeriodic() {
     CommandScheduler.getInstance().run();
+
+    LimelightHelpers limelightHelpers = new LimelightHelpers();
+    SmartDashboard.putNumber("Limelight TX", limelightHelpers.getTx());
+    SmartDashboard.putNumber("Limelight TY", limelightHelpers.getTy());
+    SmartDashboard.putNumber("Limelight TA", limelightHelpers.getTa());
+
   }
 
   @Override
