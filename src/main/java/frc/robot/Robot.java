@@ -22,6 +22,7 @@ public class Robot extends TimedRobot {
     SmartDashboard.putNumber("Limelight TX", limelightHelpers.getTx());
     SmartDashboard.putNumber("Limelight TY", limelightHelpers.getTy());
     SmartDashboard.putNumber("Limelight TA", limelightHelpers.getTa());
+    SmartDashboard.putBoolean("Limelight Has Target", limelightHelpers.hasTarget());
 
   }
 
