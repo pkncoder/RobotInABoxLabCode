@@ -18,11 +18,17 @@ public class Robot extends TimedRobot {
   public void robotPeriodic() {
     CommandScheduler.getInstance().run();
 
+    // Initalize the limelight helpers class
     LimelightHelpers limelightHelpers = new LimelightHelpers();
+
+    // Put the 't' values to smartdashboard
     SmartDashboard.putNumber("Limelight TX", limelightHelpers.getTx());
     SmartDashboard.putNumber("Limelight TY", limelightHelpers.getTy());
     SmartDashboard.putNumber("Limelight TA", limelightHelpers.getTa());
     SmartDashboard.putBoolean("Limelight Has Target", limelightHelpers.hasTarget());
+
+    // Put the distance to smartdashboard
+    SmartDashboard.putNumber("April Tag Distance", limelightHelpers.getDistance());
 
   }
 
