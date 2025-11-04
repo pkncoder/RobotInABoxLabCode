@@ -84,6 +84,27 @@ public class LimelightHelpers {
         return distance;
     }
 
+    /* 
+     * Returns the angle (in degrees) in offset of the april tag in degrees
+    */
+    public double getAprilTagAngleOffsetX() {
+        // Get the bot pose
+        double[] pose = getBotPose();
+
+        // Save the x offset, z offset, and yaw offset from the bot pose
+        double x = pose[0];
+        double z = pose[2];
+        double yaw = pose[5];
+
+        // Get the angle in degrees
+        double rawAngleDeg = Math.toDegrees(Math.atan2(-x, -z));
+
+        // Use the yaw offset to get the target angle
+        double targetAngleDegrees = rawAngleDeg - yaw;
+        
+        return targetAngleDegrees;
+    }
+
     /*
      * Returns positioning data of the camera in relation to the april tag
      * 
